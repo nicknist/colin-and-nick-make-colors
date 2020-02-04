@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import { ChromePicker } from 'react-color';
 
 class ColorPicker extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       displayColorPicker: false,
-      color: '#ffffff'
     };
   }
 
@@ -19,7 +18,8 @@ class ColorPicker extends Component {
   }
 
   handleChange = (color) => {
-    this.setState({ color: color.hex })
+    console.log(color);
+    this.props.handleChange(color.hex, this.props.number)
   }
 
   render() {
@@ -39,18 +39,18 @@ class ColorPicker extends Component {
       padding: '5px',
       width: '100px',
       height: '200px',
-      background: `${this.state.color}`,
+      background: `${this.props.color}`,
       borderRadius: '1px'
     }
     return (
       <article>
         <div className="color-rectangle" style={ background } onClick={ this.handleClick }></div>
-        <p>{this.state.color}</p>
+        <p>{this.props.color}</p>
         <p>Hex Code</p>
         { this.state.displayColorPicker ?
           <div className="color-rectangle" style={ popOver }>
-          <div className="no-hover" style={ cover } onClick={ this.handleClose }/>
-          <ChromePicker disableAlpha={true} color={ this.state.color } onChangeComplete={ this.handleChange }/>
+          <div className="no-hover" id={`square${this.props.number}`} style={ cover } onClick={ this.handleClose }/>
+          <ChromePicker disableAlpha={true} color={this.props.color} onChangeComplete={this.handleChange}/>
           </div> : null }
       </article>
     )
