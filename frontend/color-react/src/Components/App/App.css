@@ -23,6 +23,19 @@
   color: white;
 }
 
+.randomizer {
+  display: block;
+  margin: auto;
+  background-color: #CB0BEF;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.randomizer:hover {
+  cursor: pointer;
+}
+
 .color-rectangle:hover {
   cursor: pointer;
 }
@@ -32,7 +45,7 @@
 }
 
 .container {
-  min-height: 90vh;
+  min-height: 40vh;
   color: white;
   margin: auto;
   display: inline-flex;
