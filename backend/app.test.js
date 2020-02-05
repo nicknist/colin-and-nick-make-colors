@@ -1,14 +1,17 @@
-const app = require('./app');
-const request = require('supertest');
+import "@babel/polyfill"
+// const app = require('./app');
+// const request = require('supertest');
+import app from './app';
+import request from 'supertest';
 
 const environment = process.env.NODE_ENV || 'development';
 const configuration = require('./knexfile')[environment];
 const database = require('knex')(configuration);
 
 describe('server', () => {
-  beforeEach(async () => {
-    await database.seed.run();
-  });
+  // beforeEach(async () => {
+  //   await database.seed.run();
+  // });
 
   describe('init', () => {
     it('should return a 200 status', async () => {

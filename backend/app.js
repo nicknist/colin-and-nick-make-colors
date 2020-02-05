@@ -11,7 +11,8 @@ app.use(cors());
 app.locals.title = 'colin-and-nick-make-colors'
 
 app.get('/', (request, response) => {
-  response.send('Welcome to Colin and Nicks color picker')
+  // response.send('Welcome to Colin and Nicks color picker')
+  response.status(200).json();
 })
 
 module.exports = app;
