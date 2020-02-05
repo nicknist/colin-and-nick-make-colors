@@ -8,6 +8,7 @@ const database = require('knex')(configuration);
 
 app.use(express.json())
 app.use(cors());
+app.locals.title = 'colin-and-nick-make-colors'
 
 app.get('/', (request, response) => {
   response.send('Welcome to Colin and Nicks color picker')
