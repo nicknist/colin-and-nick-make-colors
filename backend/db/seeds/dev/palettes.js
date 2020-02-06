@@ -16,6 +16,7 @@ const createPalette = async (knex, palette) => {
 exports.seed = async (knex) => {
   try {
     await knex('palettes').del()
+    // await knex('projects').del()
 
     let palettePromises = samplePalettes.map(palette => createPalette(knex, palette))
 
