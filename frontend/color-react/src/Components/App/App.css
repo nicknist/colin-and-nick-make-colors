@@ -14,6 +14,10 @@
   }
 }
 
+.white {
+  color: white;
+}
+
 .App-header {
   background-color: #CB0BEF;
   min-height: 10vh;
@@ -30,10 +34,15 @@
   color: white;
   font-weight: bold;
   padding: 5px;
+  margin-bottom: 5px;
 }
 
 .randomizer:hover {
   cursor: pointer;
+}
+
+input {
+  margin-bottom: 5px;
 }
 
 .color-rectangle:hover {
@@ -50,6 +59,11 @@
   margin: auto;
   display: inline-flex;
   padding: 10px;
+}
+
+.palette-div {
+  display: flex;
+  justify-content: center;
 }
 
 @keyframes App-logo-spin {
